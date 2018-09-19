@@ -1,6 +1,6 @@
 {{#if medicamentos }}
 {{#each medicamentos}}
-<tr class="medication" data-medication="{{#each this.generico}}{{this}}{{/each}}">
+<tr class="medication" data-medication="{{#each this.generico}}{{#if @last}}{{this}}{{else}}{{this}} {{/if}}{{/each}} {{#each this.referencia}}{{#if @last}}{{this}}{{else}}{{this}} {{/if}}{{/each}} {{this.registro}}">
     <th scope="row">{{#each this.generico}}{{#if @last}}{{this}}{{else}}{{this}} + {{/if}}{{/each}}</th>
     <td>{{#each this.referencia}}{{#if @last}}{{this}}{{else}}{{this}} + {{/if}}{{/each}}</td>
     <td>{{this.registro}}</td>

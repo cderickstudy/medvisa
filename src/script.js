@@ -146,7 +146,9 @@ $ = jQuery;
               var $medvisa = $('#tableControler').find('.medication');
               $medvisa.each(function(i, val) {
                 var $medvisaData = $(this).data('medication');
-                if ($medvisaData.indexOf(selectedMedicine) >= 0 || selectedMedicine === undefined) {
+                var $res = $medvisaData.toLowerCase();
+                var sel = selectedMedicine.toLowerCase();
+                if ($res.indexOf(sel) >= 0 || sel === undefined) {
                   $(this).show();
                 } else {
                   $(this).hide();
