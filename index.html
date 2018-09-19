@@ -7,49 +7,13 @@
         <meta name="description" content="Ache seu medicamento Generico">
         <meta name="author" content="Denis Angelo">
         <!--link rel="icon" href="../../../../favicon.ico"-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <style type="text/css">
-            body {
-            min-height: 10rem;
-            padding-top: 4.5rem;
-            }
-            .navBg {
-                background-color: #212b73;
-            }
-            .cusTomyl {
-                color: #fcd309 !important;
-            }
-            .cusTomyl:hover {
-                color: yellow !important;   
-            }
-            .nav-item {
-                width: 140px;
-                text-align: center;
-                margin: 0 5px;
-            }
-            #home {
-                cursor: pointer;
-            }
-        </style>
-        <script type="text/javascript">
-        $ = jQuery;
-        $(document).ready(function(){
-          $('.hidecontroler').hide();
-          $('.mainsearch').show();
-          $('#home').click(function(){
-            $('.hidecontroler').hide();
-            $('.mainsearch').show();
-          });
-          $('.nav-link').click(function(){
-            var tt = $(this).data('gentabs');
-            $('.hidecontroler').hide();
-            $('.'+tt).show();
-          });
-        });
-        </script>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+        <script src="src/script.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark cusTomyl fixed-top navBg">
@@ -95,7 +59,7 @@
                                 <label for="genericSearch" class="sr-only">Generico</label>
                                 <input type="text" class="form-control w-100 mb-2 mr-2" id="genericSearch" placeholder="Nome do Generico...">
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Procurar Medicamento</button>
+                            <a href="javascript:void(0);" id="filter-medicine" class="btn btn-primary mb-2">Procurar Medicamento</a>
                         </form>
                     </div>
                     <div id="tableControl">
@@ -104,19 +68,12 @@
                                 <tr>
                                     <th scope="col">Genérico</th>
                                     <th scope="col">Referencia</th>
-                                    <th scope="col">Forma</th>
+                                    <th scope="col">Registro</th>
                                     <th scope="col">Concentração</th>
                                     <th scope="col">Informações</th>
                                 </tr>
                             </thead>
                             <tbody id="tableControler">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>asasa</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -151,5 +108,7 @@
                 </div>
             </div>
         </main>
+        <div id="rendermodais">
+        </div>
     </body>
 </html>

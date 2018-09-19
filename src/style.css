@@ -1,0 +1,27 @@
+body {
+    min-height: 10rem;
+    padding-top: 4.5rem;
+}
+.navBg {
+    background-color: #212b73;
+}
+.cusTomyl {
+    color: #fcd309 !important;
+}
+.cusTomyl:hover {
+    color: yellow !important;   
+}
+.nav-item {
+    width: 140px;
+    text-align: center;
+    margin: 0 5px;
+}
+#home {
+    cursor: pointer;
+}
+.cursorP {
+	cursor: pointer;
+}
+.medication	{
+	display: none;
+}

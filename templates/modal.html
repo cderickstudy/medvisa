@@ -1,0 +1,75 @@
+{{#if medicamentos }}
+{{#each medicamentos}}
+<div id="medicineModal{{@index}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLiveLabel">Informações sobre o Genérico</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Nome do Genérico:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{#each this.generico}}{{#if @last}}{{this}}{{else}}{{this}} + {{/if}}{{/each}}</h6>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Referencia:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{#each this.referencia}}{{#if @last}}{{this}}{{else}}{{this}} + {{/if}}{{/each}}</h6>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Forma:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{this.forma}}</h6>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Concentração:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{this.concentracao}}</h6>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Detentor do registro:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{this.registro}}</h6>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Data de publicação:</h5>
+              </div>
+              <div class="col-md-6">
+                <h6>{{this.pubdata}}</h6>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <a href="https://www.google.com/search?q={{#each this.generico}}{{#if @last}}{{this}}{{else}}{{this}} + {{/if}}{{/each}}" target="_blank" class="btn btn-primary">Ver ofertas</a>
+          </div>
+      </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
